@@ -1,0 +1,68 @@
+:root
+{
+    --cell-color-high: rgba(41, 115, 152, 0.7);
+    --cell-color-alive: white;
+    --cell-color-dead : black;
+
+    --cell-info-enabled : flex;
+    --cell-info-disabled: none;
+    --cell-info-visibility: var(--cell-info-disabled);
+}
+
+*
+{
+    font-family: sans-serif;
+    color: white;
+}
+
+body
+{
+    background-color: #112435;
+    margin: 0;
+    overflow: hidden;
+}
+
+.cell-grid
+{
+    margin: 0;
+    overflow: hidden;
+}
+
+.cell-info
+{
+    user-select: none;
+    display: var(--cell-info-visibility);
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width:  100%;
+    font-size: small;
+}
+
+.cell
+{
+    text-align: center;
+    position: absolute;
+    width:  50px;
+    height: 50px;
+    border: 2px solid white;
+    /*border-radius: 5px;*/
+}
+
+.cell-high
+{
+    background-color: var(--cell-color-high) !important;
+}
+
+.cell-alive
+{
+    background-color: var(--cell-color-alive);
+}
+
+.cell-dead
+{
+    background-color: var(--cell-color-dead);
+}
+
+.cell-alive>.cell-info { color: var(--cell-color-dead ); }
+.cell-dead >.cell-info { color: var(--cell-color-alive); }
